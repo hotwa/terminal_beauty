@@ -1,0 +1,38 @@
+# Terminal
+
+[github repository](https://github.com/craftzdog/dotfiles-public)
+
+## [Windows 11](https://zhuanlan.zhihu.com/p/137595941)
+
+profile path : `C:\Users\%username%\Documents\PowerShell`
+
+[powershell7](https://github.com/PowerShell/PowerShell/releases)
+
+- [Scoop](https://scoop.sh/) - A command-line installer
+- [Git for Windows](https://gitforwindows.org/)
+- [Oh My Posh](https://ohmyposh.dev/) - Prompt theme engine
+- [Terminal Icons](https://github.com/devblackops/Terminal-Icons) - Folder and file icons
+- [PSReadLine](https://docs.microsoft.com/en-us/powershell/module/psreadline/) - Cmdlets for customizing the editing environment, used for autocompletion
+- [z](https://www.powershellgallery.com/packages/z) - Directory jumper
+- [PSFzf](https://github.com/kelleyma49/PSFzf) - Fuzzy finder
+
+scoop ` iwr -useb get.scoop.sh | iex `
+
+## 安装 Powershell 插件
+
+```shell
+# 1. 安装 PSReadline 包，该插件可以让命令行很好用，类似 zsh
+Install-Module -Name PSReadLine  -Scope CurrentUser
+
+# 2. 安装 posh-git 包，让你的 git 更好用
+Install-Module posh-git  -Scope CurrentUser
+
+# 3. 安装 oh-my-posh 包，让你的命令行更酷炫、优雅
+Install-Module oh-my-posh -Scope CurrentUser
+
+Install-Module -Name z
+```
+
+```powershell
+notepad.exe $Profile
+```
