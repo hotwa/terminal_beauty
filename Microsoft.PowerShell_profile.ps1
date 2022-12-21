@@ -12,15 +12,27 @@
 Import-Module posh-git
 
 # 引入 oh-my-posh
-Import-Module oh-my-posh
+#Import-Module oh-my-posh
+# oh-my-posh init pwsh | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/1_shell.omp.json" | Invoke-Expression
 
 # 引入 ps-read-line
 Import-Module PSReadLine
 
 Import-Module -Name Terminal-Icons
-# 设置 PowerShell 主题
-# Set-PoshPrompt ys
-# Set-PoshPrompt paradox
+
+# load conda 
+
+$Env:CONDA_EXE = "C:\ProgramData\Miniconda3\Scripts\conda.exe"
+$Env:_CE_M = ""
+$Env:_CE_CONDA = ""
+$Env:_CONDA_ROOT = "C:\ProgramData\Miniconda3"
+$Env:_CONDA_EXE = "C:\ProgramData\Miniconda3\Scripts\conda.exe"
+$CondaModuleArgs = @{ChangePs1 = $True}
+Import-Module "$Env:_CONDA_ROOT\shell\condabin\Conda.psm1" -ArgumentList $CondaModuleArgs
+
+Remove-Variable CondaModuleArgs
+
 #------------------------------- Import Modules END   -------------------------------
 
 
