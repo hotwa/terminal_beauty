@@ -16,8 +16,6 @@ profile path : `C:\Users\%username%\Documents\PowerShell`
 - [z](https://www.powershellgallery.com/packages/z) - Directory jumper
 - [PSFzf](https://github.com/kelleyma49/PSFzf) - Fuzzy finder
 
-scoop ` iwr -useb get.scoop.sh | iex `
-
 ## 安装 Powershell 插件
 
 ```shell
@@ -35,4 +33,18 @@ Install-Module -Name z
 
 ```powershell
 notepad.exe $Profile
+```
+
+## install oh-my-posh
+
+```shell
+iwr -useb get.scoop.sh | iex
+# dir (Get-Command oh-my-posh).Source
+scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
+# download font https://www.nerdfonts.com/font-downloads
+# Meslo LG M Regular Nerd Font Complete Mono Windows Compatible
+# Preview
+Get-PoshThemes
+# set POSH_THEMES_PATH ENV and edit notepad $PROFILE 
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/主题名称.omp.json" | Invoke-Expression
 ```
