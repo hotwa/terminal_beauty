@@ -12,9 +12,10 @@
 Import-Module posh-git
 
 # 引入 oh-my-posh
-#Import-Module oh-my-posh
+#Import-Module oh-my-posh 
+# theme recommand: peru paradox onehalf.minimal night-owl kali atomic  .omp.json
 # oh-my-posh init pwsh | Invoke-Expression
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/1_shell.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/atomic.omp.json" | Invoke-Expression
 
 # 引入 ps-read-line
 Import-Module PSReadLine
