@@ -38,6 +38,8 @@ notepad.exe $Profile
 ## install oh-my-posh
 
 ```shell
+Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+# 或者
 iwr -useb get.scoop.sh | iex
 # dir (Get-Command oh-my-posh).Source
 scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
