@@ -48,3 +48,16 @@ Get-PoshThemes
 # set POSH_THEMES_PATH ENV and edit notepad $PROFILE 
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/主题名称.omp.json" | Invoke-Expression
 ```
+
+## install offline
+
+```shell
+# 有可能失败.先离线下载instll.ps1
+wget -c https://raw.githubusercontent.com/scoopinstaller/install/master/install.ps1
+
+# 执行安装脚本--以管理员执行
+iex .\install.ps1 -RunAsAdmin
+
+# 实际执行
+iex "E:\aliyun\Desktop\install.ps1"
+```
