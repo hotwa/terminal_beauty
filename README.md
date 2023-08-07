@@ -51,6 +51,8 @@ Get-PoshThemes
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/主题名称.omp.json" | Invoke-Expression
 ```
 
+https://blog.csdn.net/omaidb/article/details/129286772
+
 ## install offline
 
 ```shell
