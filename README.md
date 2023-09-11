@@ -65,3 +65,21 @@ iex .\install.ps1 -RunAsAdmin
 # 实际执行
 iex "E:\aliyun\Desktop\install.ps1"
 ```
+
+离线下载 install.ps1 文件:
+
+```shell
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/scoopinstaller/install/master/install.ps1" -OutFile ".\install.ps1"
+```
+
+以管理员身份执行安装脚本:
+
+```shell
+Invoke-Expression -Command ".\install.ps1 -RunAsAdmin"
+```
+
+实际执行:
+
+```shell
+Invoke-Expression -Command "E:\aliyun\Desktop\install.ps1"
+```
