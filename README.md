@@ -48,7 +48,7 @@ scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/downl
 # Preview
 Get-PoshThemes
 # set POSH_THEMES_PATH ENV and edit notepad $PROFILE 
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/主题名称.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/atomic.omp.json" | Invoke-Expression
 ```
 
 https://blog.csdn.net/omaidb/article/details/129286772
