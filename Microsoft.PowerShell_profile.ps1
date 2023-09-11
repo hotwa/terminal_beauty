@@ -140,6 +140,7 @@ function LookDir {
 
 Set-Alias -Name lyls -Value LookDir
 
+Set-Alias -Name powershell7 -Value "C:\Program Files\PowerShell\7\pwsh.exe"
 
 #-------------------------------    Set Alias END     -------------------------------
 
