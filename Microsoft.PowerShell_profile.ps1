@@ -2,7 +2,7 @@
  * FileName: Microsoft.PowerShell_profile.ps1
  * Author: pylyzeng
  * Email: pylyzeng@outlook.com
- * Date: 2022, Nov. 25
+ * Date: 2023, Nov. 25
  * Copyright: No copyright. You can use this code for anything with no warranty.
 #>
 
@@ -21,18 +21,6 @@ oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/atomic.omp.json" | Invoke-E
 Import-Module PSReadLine
 
 Import-Module -Name Terminal-Icons
-
-# load conda 
-
-$Env:CONDA_EXE = "C:\ProgramData\Miniconda3\Scripts\conda.exe"
-$Env:_CE_M = ""
-$Env:_CE_CONDA = ""
-$Env:_CONDA_ROOT = "C:\ProgramData\Miniconda3"
-$Env:_CONDA_EXE = "C:\ProgramData\Miniconda3\Scripts\conda.exe"
-$CondaModuleArgs = @{ChangePs1 = $True}
-Import-Module "$Env:_CONDA_ROOT\shell\condabin\Conda.psm1" -ArgumentList $CondaModuleArgs
-
-Remove-Variable CondaModuleArgs
 
 #------------------------------- Import Modules END   -------------------------------
 
@@ -139,6 +127,8 @@ function LookDir {
 }
 
 Set-Alias -Name lyls -Value LookDir
+
+Set-Alias -Name mba -Value micromamba
 
 Set-Alias -Name powershell7 -Value "C:\Program Files\PowerShell\7\pwsh.exe"
 
