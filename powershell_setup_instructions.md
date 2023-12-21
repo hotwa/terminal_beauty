@@ -58,3 +58,32 @@ Set-PSReadLineOption -HistorySearchCursorMovesToEnd
 ## 注意事项
 
 编辑 `$PROFILE` 文件时请小心操作，因为错误的配置可能会影响 PowerShell 的正常使用。如需恢复默认设置，只需从 `$PROFILE` 文件中移除这些配置或注释掉即可。
+
+## 安装mircomamba 和 starship
+
+
+安装命令：
+
+```shell
+Invoke-Webrequest -URI https://micro.mamba.pm/api/micromamba/win-64/latest -OutFile micromamba.tar.bz2
+tar xf micromamba.tar.bz2
+
+MOVE -Force Library\bin\micromamba.exe micromamba.exe
+.\micromamba.exe --help
+
+# You can use e.g. $HOME\micromambaenv as your base prefix
+$Env:MAMBA_ROOT_PREFIX="$Env:USERPROFILE\micromambaenv"
+
+# Invoke the hook
+.\micromamba.exe shell hook -s powershell | Out-String | Invoke-Expression
+
+# ... or initialize the shell
+.\micromamba.exe shell init -s powershell -p $Env:USERPROFILE\micromambaenv
+```
+
+将以下配置添加到 `$PROFILE` 文件中，然后保存并关闭文件：
+
+```shell
+Invoke-Expression (&starship init powershell)
+$Env:MAMBA_ROOT_PREFIX="$Env:USERPROFILE\micromambaenv"
+```
